@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .content, .response {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="content active" id="mainContent">
+        <h1>Hello!</h1>
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/151/458/desktop-wallpaper-bubu-dudu-star-bubu-dudu.jpg" alt="Cute Image">
+        <p>Do you love me?</p>
+        <button onclick="showResponse('yes')">Yes</button>
+        <button onclick="showResponse('no')">No</button>
+    </div>
+
+    <!-- Response Content -->
+    <div class="response" id="responseContent">
+        <h2 id="responseMessage"></h2>
+        <img id="responseImage" src="" alt="Response Image">
+    </div>
+
+    <script>
+        function showResponse(answer) {
+            // Hide the main content
+            document.getElementById('mainContent').classList.remove('active');
+
+            // Show the response content
+            document.getElementById('responseContent').classList.add('active');
+
+            // Customize the response based on the answer
+            if (answer === 'yes') {
+                document.getElementById('responseMessage').textContent = 'Thank you!!';
+                document.getElementById('responseImage').src = 'https://tse1.mm.bing.net/th?id=OIP.b44PdLqswEaQAtgv5MJDQwHaHa&pid=Api&P=0&h=180';
+            } else {
+                document.getElementById('responseMessage').textContent = 'Jsa m bolegi vsa tumko krni pdegi..😎';
+                document.getElementById('responseImage').src = 'https://ih1.redbubble.net/image.3817068377.2804/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg';
+            }
+        }
+    </script>
+</body>
+</html>
